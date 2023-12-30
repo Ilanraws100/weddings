@@ -28,22 +28,29 @@ export default function Header(props) {
             backgroundColor: primaryColor,
             color: "white",
             py: 1.5,
+            width: "100%",
           }}
         >
           <Toolbar>
             <Typography
               variant="h3"
-              sx={{ fontFamily: "Lily Script One, cursive",flexGrow: 1 }}
+              sx={{ fontFamily: "Lily Script One, cursive", flexGrow: 1 }}
             >
               Aroma Eventz
             </Typography>
-            <CustomButton  label="Sign Up"/>
-            <Button sx={{ color: "white", marginLeft: "auto" }}>Sign In</Button>{" "}
+            <CustomButton label="Sign Up" />
+            <Button
+              sx={{
+                color: "white",
+                marginLeft: "auto",
+                display: { xs: "none", md: "block" },
+              }}
+            >
+              Sign In
+            </Button>{" "}
           </Toolbar>
         </AppBar>
       </ElevationScroll>
     </header>
   );
 }
-
-

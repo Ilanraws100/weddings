@@ -58,6 +58,7 @@ export default function CustomButton(props) {
         padding: props.padding || "5px 20px",
         fontWeight: "bold",
         margin: "10px",
+        width: props.width,
         ":hover": {
           color: "white",
         },

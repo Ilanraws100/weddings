@@ -22,26 +22,28 @@ export default function FooterSection() {
         Subscribe to Our Newsletter & Updates!
       </Typography>
       <Stack
-        direction={"row"}
+        direction={{ xs: "column", md: "row" }}
         width={"100%"}
         justifyContent={"center"}
+        alignItems={{ xs: "center", md: "stretch" }}
         spacing={5}
       >
         <TextField
           label="Enter your email here"
           placeholder="example@gmail.com"
-          sx={{ backgroundColor: "white", width: "400px" }}
+          size="small"
+          sx={{ backgroundColor: "white", width: { xs: "300px", md: "450px" } }}
         />
-        <CustomButton label="Subscribe" />
+        <CustomButton label="Subscribe" width={{ xs: "300px", md: "150px" }} />
       </Stack>
       <Stack
-        direction={"row"}
-        alignItems={"end"}
+        direction={{ xs: "column-reverse", md: "row" }}
+        alignItems={{ xs: "center", md: "end" }}
         justifyContent={"space-between"}
         spacing={5}
         padding={5}
       >
-        <Stack>
+        <Stack alignItems={{ xs: "center", md: "start" }}>
           <Stack direction="row" alignItems="center" spacing={1}>
             <Link
               href={
@@ -69,7 +71,12 @@ export default function FooterSection() {
           </Stack>
           <Typography>©Copyright 2024 | Aroma’s Eventz </Typography>
         </Stack>
-        <Stack direction={"row"} justifyContent={"center"} spacing={2}>
+        <Stack
+          direction={"row"}
+          flexWrap={"wrap"}
+          justifyContent={"center"}
+          spacing={2}
+        >
           {[
             { label: "About", path: "/about" },
             { label: "Gallery", path: "/gallery" },
@@ -77,7 +84,11 @@ export default function FooterSection() {
             { label: "FAQs", path: "/faq" },
             { label: "Contact", path: "/contact" },
           ].map((item) => (
-            <Link href={item.path} key={item.label}>
+            <Link
+              href={item.path}
+              key={item.label}
+              style={{ textDecoration: "none" }}
+            >
               <Button
                 key={item.label}
                 variant="text"
