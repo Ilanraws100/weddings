@@ -1,12 +1,6 @@
 import Image from "next/image";
 import Header from "@/components/header";
-import {
-  Button,
-  MenuItem,
-  Stack,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Button, MenuItem, Stack, TextField, Typography } from "@mui/material";
 import CustomButton, {
   AromaEventzButton,
   ContactAromaButton,
@@ -42,10 +36,12 @@ export default function Home() {
           <Image src="/decor1.jpg" alt="Mandap decoration" fill priority />
           <Stack
             sx={{
+              backgroundColor:'rgb(0,0,0,0.2)',
               position: "relative",
               justifyContent: "center",
               alignItems: "start",
-              padding: 50,
+              paddingLeft: 10,
+              paddingTop:10,
               display: {
                 xs: "none",
                 md: "block",
@@ -73,9 +69,9 @@ export default function Home() {
             <CustomButton label="Know More" padding={"10px 20px"} />
           </Stack>
           <Typography
-            variant="h3"
             sx={{
               position: "absolute",
+              fontSize:h3_fontSize,
               bottom: 0,
               width: "100%",
               alignSelf: "center",
@@ -91,23 +87,31 @@ export default function Home() {
             To Start, Check With Availability
           </Typography>
         </div>
-        <div
-          style={{
-            position: "relative",
+        <Stack
+          sx={{
             backgroundColor: primaryColor,
-            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
             justifyContent: "center",
-            padding: 10,
+            padding: 5,
           }}
-        ><Stack sx={{ display: { xs: "none", md: "block" } }}>
-          <Image
-            src="/design1.jpg"
-            alt="Design"
-            width={600}
-            height={650}
-            priority
-          />
-        </Stack>
+        >
+          <Stack
+            sx={{
+              display: { xs: "none", md: "block" },
+              width: { xs: "100%", md: "50%" },
+              height: { xs: "96vw", md: "70vw" },
+              position: "relative",
+            }}
+          >
+            <Image
+              src="/design1.jpg"
+              alt="Design"
+              // width={600}
+              // height={650}
+              fill
+              priority
+            />
+          </Stack>
           <Stack
             spacing={2}
             sx={{
@@ -179,7 +183,7 @@ export default function Home() {
             <TextField label="Phone No." />
             <CustomButton label="Submit" />
           </Stack>
-        </div>
+        </Stack>
         <section>
           <Stack
             sx={{
@@ -201,7 +205,7 @@ export default function Home() {
               Why Aroma Eventz ?
             </Typography>
             <Typography
-              variant="h4"
+              variant="h5"
               sx={{ textAlign: { xs: "justify", md: "center" } }}
             >
               &quot;Choose Elegance and Sophistication with Aroma Events: The
@@ -316,53 +320,79 @@ export default function Home() {
             />
           </Stack>
         </section>
-        <section
-          style={{
-            backgroundColor: secondaryColor,
-            display: "flex",
-            flexDirection: "column",
-            textAlign: "center",
-            padding: 50,
-          }}
-        >
-          <Typography variant="h3" sx={{ fontWeight: "bold", paddingY: 2 }}>
-            Delicious food, the mantra of a Bengali Event!
-          </Typography>
-          <Typography variant="h5">
-            A Bengali event means stories of delicious food in the vessel of
-            memories.
-          </Typography>
+        <section>
           <Stack
-            direction={{ xs: "column-reverse", md: "row" }}
-            justifyContent={"space-between"}
-            spacing={5}
-            sx={{ paddingTop: 10 }}
+            sx={{
+              backgroundColor: secondaryColor,
+              textAlign: "center",
+              paddingY: { md: 5 },
+              paddingX: {
+                xs: 2,
+                md: 5,
+              },
+            }}
           >
-            <Stack
-              spacing={5}
-              alignItems={"start"}
-              sx={{ textAlign: "left" }}
-              maxWidth={900}
+            <Typography
+              sx={{
+                fontWeight: "bold",
+                paddingY: 2,
+                fontSize: h2_fontSize,
+                textAlign: "center",
+                paddingTop: 5,
+              }}
             >
-              <Typography variant="h3" sx={{ fontWeight: "bold" }}>
-                Harmonizing Heritage with Contemporary Grace,Crafting Memories.{" "}
-              </Typography>
-              <Typography variant="h5">
-                As you embark on this splendid journey together, may your love
-                be a beacon of warmth and joy. Wishing you a life filled with
-                shared dreams, deep understanding, and a love that grows
-                stronger and more beautiful with every passing moment.
-              </Typography>
-              <AromaEventzButton />
-              <ContactAromaButton />
+              Delicious food, the mantra of a Bengali Event!
+            </Typography>
+            <Typography
+              variant="h5"
+              sx={{ display: { xs: "none", md: "block" }, paddingBottom: 5 }}
+            >
+              A Bengali event means stories of delicious food in the vessel of
+              memories.
+            </Typography>
+            <Stack
+              direction={{ xs: "column-reverse", md: "row" }}
+              justifyContent={"space-between"}
+              spacing={5}
+              sx={{ paddingY: 5 }}
+            >
+              <Stack
+                spacing={5}
+                alignItems={"start"}
+                sx={{ textAlign: { xs: "justify", md: "left" } }}
+                maxWidth={{ xs: "100%", md: "50%" }}
+              >
+                <Typography
+                  variant="h3"
+                  sx={{ fontWeight: "bold", fontSize: h3_fontSize }}
+                >
+                  Harmonizing Heritage with Contemporary Grace,Crafting
+                  Memories.{" "}
+                </Typography>
+                <Typography variant="h5">
+                  As you embark on this splendid journey together, may your love
+                  be a beacon of warmth and joy. Wishing you a life filled with
+                  shared dreams, deep understanding, and a love that grows
+                  stronger and more beautiful with every passing moment.
+                </Typography>
+                <AromaEventzButton />
+                <ContactAromaButton />
+              </Stack>
+              <Stack
+                sx={{
+                  position: "relative",
+                  width: { xs: "100%", md: "50%" },
+                  height: { xs: "96vw", md: "40vw" },
+                }}
+              >
+                <Image
+                  src="/food1.jpg"
+                  alt="Delicious Bengali Food"
+                  fill
+                  priority
+                />
+              </Stack>
             </Stack>
-            <Image
-              src="/food1.jpg"
-              alt="Delicious Bengali Food"
-              width={500}
-              height={450}
-              priority
-            />
           </Stack>
         </section>
         <section
