@@ -43,15 +43,29 @@ export default function FooterSection() {
       >
         <Stack>
           <Stack direction="row" alignItems="center" spacing={1}>
-            <IconButton aria-label="delete" size="large">
-              <FacebookIcon />
-            </IconButton>
-            <IconButton aria-label="delete" size="large">
-              <InstagramIcon fontSize="inherit" />
-            </IconButton>
-            <IconButton aria-label="delete" size="large">
-              <WhatsAppIcon fontSize="inherit" />
-            </IconButton>
+            <Link
+              href={
+                "https://www.facebook.com/profile.php?id=100090292629394&mibextid=ZbWKwL"
+              }
+            >
+              <IconButton aria-label="facebook" size="large">
+                <FacebookIcon />
+              </IconButton>
+            </Link>
+            <Link
+              href={
+                "https://www.instagram.com/aroma_caterer_and_decorators/?igsh=ZHY0ZjZlMDZtenA%3D"
+              }
+            >
+              <IconButton aria-label="instagram" size="large">
+                <InstagramIcon fontSize="inherit" />
+              </IconButton>
+            </Link>
+            <Link href={"https://wa.me/+918013572929"}>
+              <IconButton aria-label="whatsapp" size="large">
+                <WhatsAppIcon fontSize="inherit" />
+              </IconButton>
+            </Link>
           </Stack>
           <Typography>©Copyright 2024 | Aroma’s Eventz </Typography>
         </Stack>
