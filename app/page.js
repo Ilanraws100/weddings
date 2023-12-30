@@ -1,11 +1,25 @@
 import Image from "next/image";
 import Header from "@/components/header";
-import { Button, MenuItem, Stack, TextField, Typography } from "@mui/material";
+import {
+  Button,
+  Container,
+  MenuItem,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
 import CustomButton, {
   AromaEventzButton,
   ContactAromaButton,
 } from "@/components/customButton";
-import { primaryColor, secondaryColor, tertiaryColor } from "@/consts";
+import {
+  h1_fontSize,
+  h2_fontSize,
+  h3_fontSize,
+  primaryColor,
+  secondaryColor,
+  tertiaryColor,
+} from "@/consts";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -151,79 +165,101 @@ export default function Home() {
             <CustomButton label="Submit" />
           </Stack>
         </div>
-        <section
-          style={{
-            backgroundColor: secondaryColor,
-            display: "flex",
-            flexDirection: "column",
-            textAlign: "center",
-            padding: 50,
-          }}
-        >
-          <Typography variant="h3" sx={{ fontWeight: "bold", paddingY: 2 }}>
-            Why Aroma Eventz
-          </Typography>
-          <Typography variant="h5">
-            Choose Elegance and Sophistication with Aroma Events: The Perfect
-            Venue for an Unforgettable and Majestic Marriage Celebration.
-          </Typography>
+        <section>
           <Stack
-            direction="row"
-            justifyContent={"space-between"}
-            spacing={5}
-            sx={{ paddingTop: 10 }}
+            sx={{
+              backgroundColor: secondaryColor,
+              paddingY: 10,
+              paddingX: { xs: 2, md: 10 },
+              textAlign: "justify",
+            }}
           >
-            <Stack
-              spacing={5}
-              alignItems={"start"}
-              sx={{ textAlign: "left" }}
-              maxWidth={900}
+            <Typography
+              gutterBottom
+              sx={{
+                fontWeight: "bold",
+                paddingY: 2,
+                fontSize: h3_fontSize,
+                textAlign: { xs: "justify", md: "center" },
+              }}
             >
-              <Typography variant="h3" sx={{ fontWeight: "bold" }}>
-                Blending Tradition with Elegance Where Dreams Take Flight
-              </Typography>
-              <Typography variant="h5">
-                Two hearts uniting in a lifelong journey of love and
-                companionship. May your marriage be a beautiful blend of
-                laughter, support, and endless love, blossoming with each
-                passing day into a timeless tale of togetherness and joy.
-              </Typography>
-              <AromaEventzButton />
-              <ContactAromaButton />
+              Why Aroma Eventz ?
+            </Typography>
+            <Typography
+              variant="h4"
+              sx={{ textAlign: { xs: "justify", md: "center" } }}
+            >
+              &quot;Choose Elegance and Sophistication with Aroma Events: The
+              Perfect Venue for an Unforgettable and Majestic Marriage
+              Celebration. &quot;
+            </Typography>
+            <Stack
+              direction={{ xs: "column-reverse", md: "row" }}
+              justifyContent={"space-between"}
+              spacing={5}
+              sx={{ paddingTop: { xs: 5, md: 10, lg: 20 } }}
+            >
+              <Stack
+                spacing={5}
+                alignItems={"start"}
+                sx={{ textAlign: { xs: "justify", md: "left" } }}
+                maxWidth={{ xs: "100%", md: "50%" }}
+              >
+                <Typography sx={{ fontWeight: "bold", fontSize: h3_fontSize }}>
+                  Blending Tradition with Elegance Where Dreams Take Flight
+                </Typography>
+                <Typography variant="h5">
+                  Two hearts uniting in a lifelong journey of love and
+                  companionship. May your marriage be a beautiful blend of
+                  laughter, support, and endless love, blossoming with each
+                  passing day into a timeless tale of togetherness and joy.
+                </Typography>
+                <AromaEventzButton />
+                <ContactAromaButton />
+              </Stack>
+              <Stack
+                sx={{
+                  position: "relative",
+                  width: { xs: "100%", md: "50%" },
+                  height: { xs: "96vw", md: "40vw" },
+                }}
+              >
+                <Image src="/design2.jpg" alt="Design" fill priority />
+              </Stack>
             </Stack>
-            <Image
-              src="/design2.jpg"
-              alt="Design"
-              width={500}
-              height={450}
-              priority
-            />
           </Stack>
         </section>
         <section>
           <Stack
             spacing={5}
-            padding={8}
+            paddingX={{ xs: 2, md: 5 }}
+            paddingY={{ xs: 5, md: 5 }}
             alignItems={"center"}
             sx={{ backgroundColor: primaryColor, color: "white" }}
           >
             <Typography
               variant="h3"
-              sx={{ fontWeight: "bold", textAlign: "center" }}
+              sx={{
+                fontWeight: "bold",
+                textAlign: { xs: "justify", md: "center" },
+              }}
             >
               Design Your Customized Packages
             </Typography>
-            <Typography variant="h5" sx={{ textAlign: "center" }}>
+            <Typography
+              variant="h5"
+              sx={{ textAlign: { xs: "justify", md: "center" } }}
+            >
               Choose Elegance and Sophistication with Aroma Events: The Perfect
               Venue for an Unforgettable and Majestic Marriage Celebration.
             </Typography>
             <Stack
-              direction="row"
+              direction={{ xs: "column", sm: "row" }}
               flexWrap={"wrap"}
               justifyContent={"space-around"}
-              spacing={5}
+              spacing={{ xs: 1, md: 5 }}
               gap={3}
-              padding={5}
+              padding={{ xs: 2, md: 5 }}
             >
               {[
                 "For Wedding Event",
@@ -282,7 +318,7 @@ export default function Home() {
             memories.
           </Typography>
           <Stack
-            direction="row"
+            direction={{ xs: "column-reverse", md: "row" }}
             justifyContent={"space-between"}
             spacing={5}
             sx={{ paddingTop: 10 }}
@@ -333,9 +369,13 @@ export default function Home() {
               backgroundColor: "rgba(0, 0, 0, 0.5)",
               textAlign: "center",
               paddingY: 5,
+              display: { xs: "none", md: "flex" },
             }}
           >
-            <Typography variant="h2" fontWeight={"bold"} sx={{ padding: 10 }}>
+            <Typography
+              fontWeight={"bold"}
+              sx={{ padding: 5, fontSize: h2_fontSize }}
+            >
               More question about your Dream Event and its flawless
               arrangements?
             </Typography>
@@ -347,4 +387,3 @@ export default function Home() {
     </>
   );
 }
-
