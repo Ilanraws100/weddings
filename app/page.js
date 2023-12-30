@@ -12,11 +12,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import CustomDatePicker from "@/components/datePicker";
-import IconButton from "@mui/material/IconButton";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import Link from "next/link";
+import FooterSection from "@/components/footer";
 export default function Home() {
   return (
     <>
@@ -45,7 +41,7 @@ export default function Home() {
             <Typography variant="h2" gutterBottom fontWeight={"bold"}>
               Plan your dream Event
               <br /> That Your Heart Desires,
-              <br /> with Aroma’s
+              <br /> with Aroma’s Events
             </Typography>
             <Typography variant="h5" gutterBottom fontWeight={"bold"}>
               From Haldi,Sangeet to Happily Ever After. Book your <br />
@@ -325,77 +321,8 @@ export default function Home() {
           </Stack>
         </section>
       </main>
-      <footer style={{ backgroundColor: primaryColor, color: "white" }}>
-        <Typography
-          variant="h4"
-          sx={{
-            fontWeight: "bold",
-            paddingY: 2,
-            textAlign: "center",
-            paddingTop: 10,
-          }}
-        >
-          Subscribe to Our Newsletter & Updates!
-        </Typography>
-        <Stack
-          direction={"row"}
-          width={"100%"}
-          justifyContent={"center"}
-          spacing={5}
-        >
-          <TextField
-            label="Enter your email here"
-            placeholder="example@gmail.com"
-            sx={{ backgroundColor: "white", width: "400px" }}
-          />
-          <CustomButton label="Subscribe" />
-        </Stack>
-        <Stack
-          direction={"row"}
-          alignItems={"end"}
-          justifyContent={"space-between"}
-          spacing={5}
-          padding={5}
-        >
-          <Stack>
-            <Stack direction="row" alignItems="center" spacing={1}>
-              <IconButton aria-label="delete" size="large">
-                <FacebookIcon />
-              </IconButton>
-              <IconButton aria-label="delete" size="large">
-                <InstagramIcon fontSize="inherit" />
-              </IconButton>
-              <IconButton aria-label="delete" size="large">
-                <WhatsAppIcon fontSize="inherit" />
-              </IconButton>
-            </Stack>
-            <Typography>©Copyright 2024 | Aroma’s Eventz </Typography>
-          </Stack>
-          <Stack direction={"row"} justifyContent={"center"} spacing={2}>
-            {[
-              { label: "About", path: "/about" },
-              { label: "Gallery", path: "/gallery" },
-              { label: "T&C", path: "/t&c" },
-              { label: "FAQs", path: "/faq" },
-              { label: "Contact", path: "/contact" },
-            ].map((item) => (
-              <Button
-                key={item.label}
-                variant="text"
-                sx={{
-                  textAlign: "center",
-                  color: "white",
-                  display: "block",
-                  margin: "auto",
-                  textTransform: "none",
-                }}
-              >
-                {item.label}
-              </Button>
-            ))}
-          </Stack>
-        </Stack>
-      </footer>
+      <FooterSection />
     </>
   );
 }
+
