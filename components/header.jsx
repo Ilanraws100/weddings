@@ -8,6 +8,7 @@ import useScrollTrigger from "@mui/material/useScrollTrigger";
 import { primaryColor } from "@/consts";
 import { Button } from "@mui/material";
 import CustomButton from "./customButton";
+import Link from "next/link";
 
 function ElevationScroll({ children, window }) {
   const trigger = useScrollTrigger({
@@ -32,13 +33,22 @@ export default function Header(props) {
           }}
         >
           <Toolbar>
-            <Typography
-              variant="h3"
-              sx={{ fontFamily: "Lily Script One, cursive", flexGrow: 1 }}
-            >
-              Aroma Eventz
-            </Typography>
-            <CustomButton label="Sign Up" />
+            <Link href="/" style={{ flexGrow: 1, textDecoration: "none" }}>
+              <Typography
+                variant="h3"
+                sx={{
+                  fontFamily: "Lily Script One, cursive",
+                  flexGrow: 1,
+                  color: "white",
+                }}
+              >
+                Aroma Eventz
+              </Typography>
+            </Link>
+            <CustomButton
+              label="Sign Up"
+              display={{ xs: "none", md: "block" }}
+            />
             <Button
               sx={{
                 color: "white",

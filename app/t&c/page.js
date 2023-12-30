@@ -1,10 +1,14 @@
 import FooterSection from "@/components/footer";
+import Header from "@/components/header";
 
 export default function TermsAndConditions() {
-    return (
-        <>
-            <h1>Terms and Conditions</h1>
-            <FooterSection />
-        </>
-    );
+  return (
+    <>
+      <Header />
+      <main style={{ width: "100%", marginTop: "90px" }}>
+        <h1>Terms and Conditions</h1>
+      </main>
+      <FooterSection />
+    </>
+  );
 }

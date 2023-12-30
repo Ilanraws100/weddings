@@ -59,6 +59,7 @@ export default function CustomButton(props) {
         fontWeight: "bold",
         margin: "10px",
         width: props.width,
+        display: props.display,
         ":hover": {
           color: "white",
         },

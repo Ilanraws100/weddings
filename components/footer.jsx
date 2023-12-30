@@ -12,6 +12,7 @@ export default function FooterSection() {
     <footer style={{ backgroundColor: primaryColor, color: "white" }}>
       <Typography
         variant="h4"
+        gutterBottom
         sx={{
           fontWeight: "bold",
           paddingY: 2,
@@ -26,7 +27,7 @@ export default function FooterSection() {
         width={"100%"}
         justifyContent={"center"}
         alignItems={{ xs: "center", md: "stretch" }}
-        spacing={5}
+        spacing={{ xs: 2, md: 5}}
       >
         <TextField
           label="Enter your email here"
