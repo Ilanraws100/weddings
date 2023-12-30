@@ -73,7 +73,13 @@ export default function Home() {
             padding: 50,
           }}
         >
-          <Image src="/design1.jpg" alt="Design" width={600} height={650} />
+          <Image
+            src="/design1.jpg"
+            alt="Design"
+            width={600}
+            height={650}
+            priority
+          />
           <Stack
             spacing={2}
             sx={{
@@ -185,7 +191,13 @@ export default function Home() {
               <AromaEventzButton />
               <ContactAromaButton />
             </Stack>
-            <Image src="/design2.jpg" alt="Design" width={500} height={450} />
+            <Image
+              src="/design2.jpg"
+              alt="Design"
+              width={500}
+              height={450}
+              priority
+            />
           </Stack>
         </section>
         <section>
@@ -246,7 +258,11 @@ export default function Home() {
                 </Button>
               ))}
             </Stack>
-            <AromaEventzButton label="Sign Up To Explore" backgroundColor="white" color="rgb(0, 0, 0, 0.66)" />
+            <AromaEventzButton
+              label="Sign Up To Explore"
+              backgroundColor="white"
+              color="rgb(0, 0, 0, 0.66)"
+            />
           </Stack>
         </section>
         <section
@@ -294,13 +310,19 @@ export default function Home() {
               alt="Delicious Bengali Food"
               width={500}
               height={450}
+              priority
             />
           </Stack>
         </section>
         <section
           style={{ position: "relative", width: "100%", height: "66vw" }}
         >
-          <Image src="/design3.jpg" alt="Beautiful Bengali Marriage" fill />
+          <Image
+            src="/design3.jpg"
+            alt="Beautiful Bengali Marriage"
+            fill
+            priority
+          />
           <Stack
             alignItems={"center"}
             sx={{
