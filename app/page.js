@@ -2,7 +2,6 @@ import Image from "next/image";
 import Header from "@/components/header";
 import {
   Button,
-  Container,
   MenuItem,
   Stack,
   TextField,
@@ -13,7 +12,6 @@ import CustomButton, {
   ContactAromaButton,
 } from "@/components/customButton";
 import {
-  h1_fontSize,
   h2_fontSize,
   h3_fontSize,
   primaryColor,
@@ -41,28 +39,39 @@ export default function Home() {
             color: "white",
           }}
         >
-          <Image src="/decor1.png" alt="Mandap decoration" fill priority />
-          <div
-            style={{
+          <Image src="/decor1.jpg" alt="Mandap decoration" fill priority />
+          <Stack
+            sx={{
               position: "relative",
-              display: "flex",
               justifyContent: "center",
               alignItems: "start",
-              flexDirection: "column",
-              paddingLeft: 100,
+              padding: 50,
+              display: {
+                xs: "none",
+                md: "block",
+              },
             }}
           >
-            <Typography variant="h2" gutterBottom fontWeight={"bold"}>
+            <Typography
+              sx={{ fontSize: h2_fontSize }}
+              gutterBottom
+              fontWeight={"bold"}
+            >
               Plan your dream Event
               <br /> That Your Heart Desires,
               <br /> with Aroma’s Events
             </Typography>
-            <Typography variant="h5" gutterBottom fontWeight={"bold"}>
+            <Typography
+              variant="h5"
+              sx={{ display: { xs: "none", md: "block" } }}
+              gutterBottom
+              fontWeight={"bold"}
+            >
               From Haldi,Sangeet to Happily Ever After. Book your <br />
               Venue That Echoes Your Marriage Story to a Love Story
             </Typography>
             <CustomButton label="Know More" padding={"10px 20px"} />
-          </div>
+          </Stack>
           <Typography
             variant="h3"
             sx={{
@@ -73,6 +82,10 @@ export default function Home() {
               textAlign: "center",
               fontWeight: "bold",
               paddingY: 2,
+              display: {
+                xs: "none",
+                md: "block",
+              },
             }}
           >
             To Start, Check With Availability
@@ -84,9 +97,9 @@ export default function Home() {
             backgroundColor: primaryColor,
             display: "flex",
             justifyContent: "center",
-            padding: 50,
+            padding: 10,
           }}
-        >
+        ><Stack sx={{ display: { xs: "none", md: "block" } }}>
           <Image
             src="/design1.jpg"
             alt="Design"
@@ -94,6 +107,7 @@ export default function Home() {
             height={650}
             priority
           />
+        </Stack>
           <Stack
             spacing={2}
             sx={{
@@ -101,6 +115,7 @@ export default function Home() {
               flexGrow: 1,
               padding: 2,
               borderRadius: 2,
+              width: { xs: "100%", md: "50%" },
             }}
           >
             <Typography
