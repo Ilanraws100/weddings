@@ -1,8 +1,6 @@
 import CustomButton, { AromaEventzButton } from "@/components/customButton";
 import FooterSection from "@/components/footer";
 import Header from "@/components/header";
-import { h2_fontSize, h3_fontSize, secondaryColor } from "@/consts";
-import { Typography } from "@mui/material";
 import Image from "next/image";
 
 export default function Gallery() {
@@ -29,27 +27,19 @@ export default function Gallery() {
               position: "relative",
               justifyContent: "center",
               alignItems: "start",
-              padding: { xs: 2, md: 10 },
             }}
           >
-            <Typography
-              sx={{ fontSize: h2_fontSize }}
-              gutterBottom
-              fontWeight={"bold"}
-            >
+            <h2 className="font-bold mb-4 text-4xl md:text-5xl md:leading-normal p-10">
               Gallery of Aroma Eventz: <br /> Capturing Moments,
               <br /> Creating Memories
-            </Typography>
+            </h2>
             <CustomButton label="Know More" padding={"10px 20px"} />
           </div>
         </div>
         <div className="flex flex-col items-center bg-secondary p-10">
-          <Typography
-            gutterBottom
-            sx={{ fontSize: h3_fontSize, fontWeight: "bold" }}
-          >
-            Best Moments of Weddings, Through Our Lens{" "}
-          </Typography>
+          <h2 className="font-bold mb-4 text-4xl">
+            Best Moments of Weddings, Through Our Lens
+          </h2>
           <AromaEventzButton label="Sign  Up  Free Today" />
         </div>
       </main>
