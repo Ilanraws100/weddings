@@ -1,4 +1,4 @@
-// import CustomButton from "@/components/customButton";
+import CustomButton from "@/components/customButton";
 import { primaryColor } from "@/consts";
 import IconButton from "@mui/material/IconButton";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -12,21 +12,15 @@ export default function FooterSection() {
       <h4 className="font-bold p-10 text-center mb-4 text-2xl">
         Subscribe to Our Newsletter & Updates!
       </h4>
-      {/* <Stack
-        direction={{ xs: "column", md: "row" }}
-        width={"100%"}
-        justifyContent={"center"}
-        alignItems={{ xs: "center", md: "stretch" }}
-        spacing={{ xs: 2, md: 5 }}
-      >
-        <TextField
-          label="Enter your email here"
+      <div className="flex flex-col md:flex-row justify-center items-stretch space-y-5 md:space-x-5 md:space-y-0">
+        <input
+          type="text"
           placeholder="example@gmail.com"
-          size="small"
-          sx={{ backgroundColor: "white", width: { xs: "300px", md: "450px" } }}
+          className="bg-white w-auto md:w-96 h-auto text-sm p-2 text-black"
+          aria-label="Enter your email here"
         />
-        <CustomButton label="Subscribe" width={{ xs: "300px", md: "150px" }} />
-      </Stack> */}
+        <CustomButton label="Subscribe" />
+      </div>
       <div className="flex flex-col md:flex-row-reverse items-center md:items-end justify-between p-10 space-y-5">
         <div className="flex space-x-5 flex-wrap justify-center">
           {[
@@ -39,7 +33,7 @@ export default function FooterSection() {
             <Link
               href={item.path}
               key={item.label}
-              className="m-2"
+              className="p-2 mx-3"
               style={{ textDecoration: "none" }}
             >
               <button
@@ -51,7 +45,7 @@ export default function FooterSection() {
             </Link>
           ))}
         </div>
-        <div className="flex flex-col items-center md:items-start space-y-3">
+        <div className="flex flex-col items-center md:items-start space-y-1">
           <div className="flex space-x-5">
             <Link
               href={
