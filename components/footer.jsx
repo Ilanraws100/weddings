@@ -1,5 +1,4 @@
-import { Button, Stack, TextField, Typography } from "@mui/material";
-import CustomButton from "@/components/customButton";
+// import CustomButton from "@/components/customButton";
 import { primaryColor } from "@/consts";
 import IconButton from "@mui/material/IconButton";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -10,24 +9,15 @@ import Link from "next/link";
 export default function FooterSection() {
   return (
     <footer style={{ backgroundColor: primaryColor, color: "white" }}>
-      <Typography
-        variant="h4"
-        gutterBottom
-        sx={{
-          fontWeight: "bold",
-          paddingY: 2,
-          textAlign: "center",
-          paddingTop: 10,
-        }}
-      >
+      <h4 className="font-bold p-10 text-center mb-4 text-2xl">
         Subscribe to Our Newsletter & Updates!
-      </Typography>
-      <Stack
+      </h4>
+      {/* <Stack
         direction={{ xs: "column", md: "row" }}
         width={"100%"}
         justifyContent={"center"}
         alignItems={{ xs: "center", md: "stretch" }}
-        spacing={{ xs: 2, md: 5}}
+        spacing={{ xs: 2, md: 5 }}
       >
         <TextField
           label="Enter your email here"
@@ -36,16 +26,33 @@ export default function FooterSection() {
           sx={{ backgroundColor: "white", width: { xs: "300px", md: "450px" } }}
         />
         <CustomButton label="Subscribe" width={{ xs: "300px", md: "150px" }} />
-      </Stack>
-      <Stack
-        direction={{ xs: "column-reverse", md: "row" }}
-        alignItems={{ xs: "center", md: "end" }}
-        justifyContent={"space-between"}
-        spacing={5}
-        padding={5}
-      >
-        <Stack alignItems={{ xs: "center", md: "start" }}>
-          <Stack direction="row" alignItems="center" spacing={1}>
+      </Stack> */}
+      <div className="flex flex-col md:flex-row-reverse items-center md:items-end justify-between p-10 space-y-5">
+        <div className="flex space-x-5 flex-wrap justify-center">
+          {[
+            { label: "About", path: "/about" },
+            { label: "Gallery", path: "/gallery" },
+            { label: "T&C", path: "/t&c" },
+            { label: "FAQs", path: "/faq" },
+            { label: "Contact", path: "/contact" },
+          ].map((item) => (
+            <Link
+              href={item.path}
+              key={item.label}
+              className="m-2"
+              style={{ textDecoration: "none" }}
+            >
+              <button
+                key={item.label}
+                className="text-white block mx-auto text-center no-underline"
+              >
+                {item.label}
+              </button>
+            </Link>
+          ))}
+        </div>
+        <div className="flex flex-col items-center md:items-start space-y-3">
+          <div className="flex space-x-5">
             <Link
               href={
                 "https://www.facebook.com/profile.php?id=100090292629394&mibextid=ZbWKwL"
@@ -69,44 +76,10 @@ export default function FooterSection() {
                 <WhatsAppIcon fontSize="inherit" />
               </IconButton>
             </Link>
-          </Stack>
-          <Typography>©Copyright 2024 | Aroma’s Eventz </Typography>
-        </Stack>
-        <Stack
-          direction={"row"}
-          flexWrap={"wrap"}
-          justifyContent={"center"}
-          spacing={2}
-        >
-          {[
-            { label: "About", path: "/about" },
-            { label: "Gallery", path: "/gallery" },
-            { label: "T&C", path: "/t&c" },
-            { label: "FAQs", path: "/faq" },
-            { label: "Contact", path: "/contact" },
-          ].map((item) => (
-            <Link
-              href={item.path}
-              key={item.label}
-              style={{ textDecoration: "none" }}
-            >
-              <Button
-                key={item.label}
-                variant="text"
-                sx={{
-                  textAlign: "center",
-                  color: "white",
-                  display: "block",
-                  margin: "auto",
-                  textTransform: "none",
-                }}
-              >
-                {item.label}
-              </Button>
-            </Link>
-          ))}
-        </Stack>
-      </Stack>
+          </div>
+          <p>©Copyright 2024 | Aroma’s Eventz </p>
+        </div>
+      </div>
     </footer>
   );
 }
