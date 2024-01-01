@@ -1,5 +1,4 @@
 import CustomButton from "@/components/customButton";
-import { primaryColor } from "@/consts";
 import IconButton from "@mui/material/IconButton";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -8,11 +7,11 @@ import Link from "next/link";
 
 export default function FooterSection() {
   return (
-    <footer style={{ backgroundColor: primaryColor, color: "white" }}>
+    <footer className="bg-primary text-white">
       <h4 className="font-bold p-10 text-center mb-4 text-2xl">
         Subscribe to Our Newsletter & Updates!
       </h4>
-      <div className="flex flex-col md:flex-row justify-center items-stretch space-y-5 md:space-x-5 md:space-y-0">
+      <div className="px-10 flex flex-col md:flex-row justify-center items-stretch space-y-5 md:space-x-5 md:space-y-0">
         <input
           type="text"
           placeholder="example@gmail.com"
