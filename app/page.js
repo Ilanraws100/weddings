@@ -29,7 +29,13 @@ export default function Home() {
             color: "white",
           }}
         >
-          <Image src="/decor1.jpg" alt="Mandap decoration" fill priority />
+          <Image
+            src="/decor1.jpg"
+            alt="Mandap decoration"
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+          />
           <div className="hidden md:block p-10 bg-[rgb(0,0,0,0.2)] relative">
             <h2 className="font-bold mb-4 text-5xl leading-relaxed">
               Plan your dream Event
@@ -53,6 +59,7 @@ export default function Home() {
               alt="Bengali wedding arrangements"
               fill
               priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             />
           </div>
           <QueryForm />
@@ -69,7 +76,13 @@ export default function Home() {
             </h5>
             <div className="flex flex-col md:flex-row-reverse justify-between items-center md:items-start md:pt-20 space-y-10  md:space-y-0">
               <div className="relative w-full h-[96vw] md:h-[40vw] md:ml-10">
-                <Image src="/design2.jpg" alt="Design" fill priority />
+                <Image
+                  src="/design2.jpg"
+                  alt="Design"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                />
               </div>
               <div className="flex flex-col space-y-5 items-start w-full">
                 <h3 className="font-bold text-4xl leading-tight">
@@ -153,6 +166,7 @@ export default function Home() {
                   alt="Delicious Bengali Food"
                   fill
                   priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 />{" "}
               </div>
               <div className="flex flex-col space-y-5 items-start w-full">
@@ -180,6 +194,7 @@ export default function Home() {
             alt="Beautiful Bengali Marriage"
             fill
             priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
           />
           <div className="absolute bottom-0 w-full py-5 bg-[rgb(0,0,0,0.5)] text-white hidden md:flex-col md:flex items-center">
             <h2 className="font-bold text-3xl p-5">
