@@ -88,37 +88,15 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <Stack
-            spacing={5}
-            paddingX={{ xs: 2, md: 5 }}
-            paddingY={{ xs: 5, md: 5 }}
-            alignItems={"center"}
-            sx={{ backgroundColor: primaryColor, color: "white" }}
-          >
-            <Typography
-              variant="h3"
-              sx={{
-                fontWeight: "bold",
-                textAlign: { xs: "justify", md: "center" },
-              }}
-            >
+          <div className="bg-primary text-white p-5 md:p-10 lg:p-20 flex flex-col items-center space-y-10">
+            <h3 className="font-bold text-4xl text-center">
               Design Your Customized Packages
-            </Typography>
-            <Typography
-              variant="h5"
-              sx={{ textAlign: { xs: "justify", md: "center" } }}
-            >
+            </h3>
+            <h5 className="text-2xl text-center">
               Choose Elegance and Sophistication with Aroma Events: The Perfect
               Venue for an Unforgettable and Majestic Marriage Celebration.
-            </Typography>
-            <Stack
-              direction={{ xs: "column", sm: "row" }}
-              flexWrap={"wrap"}
-              justifyContent={"space-around"}
-              spacing={{ xs: 1, md: 5 }}
-              gap={3}
-              padding={{ xs: 2, md: 5 }}
-            >
+            </h5>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {[
                 "For Wedding Event",
                 "For Anniversary Event",
@@ -151,88 +129,48 @@ export default function Home() {
                   {label}
                 </Button>
               ))}
-            </Stack>
+            </div>
             <AromaEventzButton
               label="Sign Up To Explore"
               backgroundColor="white"
               color="rgb(0, 0, 0, 0.66)"
             />
-          </Stack>
+          </div>
         </section>
         <section>
-          <Stack
-            sx={{
-              backgroundColor: secondaryColor,
-              textAlign: "center",
-              paddingY: { md: 5 },
-              paddingX: {
-                xs: 2,
-                md: 5,
-              },
-            }}
-          >
-            <Typography
-              sx={{
-                fontWeight: "bold",
-                paddingY: 2,
-                fontSize: h2_fontSize,
-                textAlign: "center",
-                paddingTop: 5,
-              }}
-            >
+          <div className="p-5 md:p-10 lg:p-20 bg-secondary space-y-10">
+            <h2 className="font-bold text-3xl text-center pt-20">
               Delicious food, the mantra of a Bengali Event!
-            </Typography>
-            <Typography
-              variant="h5"
-              sx={{ display: { xs: "none", md: "block" }, paddingBottom: 5 }}
-            >
+            </h2>
+            <h5 className="text-lg md:text-xl text-center hidden md:block">
               A Bengali event means stories of delicious food in the vessel of
               memories.
-            </Typography>
-            <Stack
-              direction={{ xs: "column-reverse", md: "row" }}
-              justifyContent={"space-between"}
-              spacing={5}
-              sx={{ paddingY: 5 }}
-            >
-              <Stack
-                spacing={5}
-                alignItems={"start"}
-                sx={{ textAlign: { xs: "justify", md: "left" } }}
-                maxWidth={{ xs: "100%", md: "50%" }}
-              >
-                <Typography
-                  variant="h3"
-                  sx={{ fontWeight: "bold", fontSize: h3_fontSize }}
-                >
-                  Harmonizing Heritage with Contemporary Grace,Crafting
-                  Memories.{" "}
-                </Typography>
-                <Typography variant="h5">
-                  As you embark on this splendid journey together, may your love
-                  be a beacon of warmth and joy. Wishing you a life filled with
-                  shared dreams, deep understanding, and a love that grows
-                  stronger and more beautiful with every passing moment.
-                </Typography>
-                <AromaEventzButton />
-                <ContactAromaButton />
-              </Stack>
-              <Stack
-                sx={{
-                  position: "relative",
-                  width: { xs: "100%", md: "50%" },
-                  height: { xs: "96vw", md: "40vw" },
-                }}
-              >
+            </h5>
+            <div className="flex flex-col md:flex-row-reverse justify-between items-center md:items-start md:pt-20 space-y-10  md:space-y-0">
+              <div className="relative w-full h-[96vw] md:h-[40vw] md:ml-10">
                 <Image
                   src="/food1.jpg"
                   alt="Delicious Bengali Food"
                   fill
                   priority
-                />
-              </Stack>
-            </Stack>
-          </Stack>
+                />{" "}
+              </div>
+              <div className="flex flex-col space-y-5 items-start w-full">
+                <h3 className="font-bold text-4xl leading-tight">
+                  Harmonizing Heritage with Contemporary Grace,Crafting
+                  Memories.{" "}
+                </h3>
+                <h5 className="text-lg">
+                  As you embark on this splendid journey together, may your love
+                  be a beacon of warmth and joy. Wishing you a life filled with
+                  shared dreams, deep understanding, and a love that grows
+                  stronger and more beautiful with every passing moment.
+                </h5>
+                <AromaEventzButton />
+                <ContactAromaButton />
+              </div>
+            </div>
+          </div>
         </section>
         <section
           style={{ position: "relative", width: "100%", height: "66vw" }}
@@ -243,28 +181,13 @@ export default function Home() {
             fill
             priority
           />
-          <Stack
-            alignItems={"center"}
-            sx={{
-              position: "absolute",
-              bottom: 0,
-              width: "100%",
-              color: "white",
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
-              textAlign: "center",
-              paddingY: 5,
-              display: { xs: "none", md: "flex" },
-            }}
-          >
-            <Typography
-              fontWeight={"bold"}
-              sx={{ padding: 5, fontSize: h2_fontSize }}
-            >
+          <div className="absolute bottom-0 w-full py-5 bg-[rgb(0,0,0,0.5)] text-white hidden md:flex-col md:flex items-center">
+            <h2 className="font-bold text-3xl p-5">
               More question about your Dream Event and its flawless
               arrangements?
-            </Typography>
+            </h2>
             <AromaEventzButton />
-          </Stack>
+          </div>
         </section>
       </main>
       <FooterSection />
