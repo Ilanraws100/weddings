@@ -1,4 +1,3 @@
-'use client';
 import Image from "next/image";
 import Header from "@/components/header";
 import { Button, MenuItem, Stack, TextField, Typography } from "@mui/material";
@@ -26,6 +25,7 @@ export default function Home() {
       <Header />
       <main style={{ width: "100%", marginTop: "90px" }}>
         <div
+          className=""
           style={{
             position: "relative",
             width: "100%",
@@ -35,74 +35,33 @@ export default function Home() {
           }}
         >
           <Image src="/decor1.jpg" alt="Mandap decoration" fill priority />
-          <Stack
-            sx={{
-              backgroundColor:'rgb(0,0,0,0.2)',
-              position: "relative",
-              justifyContent: "center",
-              alignItems: "start",
-              paddingLeft: 10,
-              paddingTop:10,
-              display: {
-                xs: "none",
-                md: "block",
-              },
-            }}
-          >
-            <Typography
-              sx={{ fontSize: h2_fontSize }}
-              gutterBottom
-              fontWeight={"bold"}
-            >
+          <div className="hidden md:block p-10 bg-[rgb(0,0,0,0.2)] relative">
+            <h2 className="font-bold mb-4 text-5xl leading-relaxed">
               Plan your dream Event
               <br /> That Your Heart Desires,
               <br /> with Aroma’s Events
-            </Typography>
-            <Typography
-              variant="h5"
-              sx={{ display: { xs: "none", md: "block" } }}
-              gutterBottom
-              fontWeight={"bold"}
-            >
-              From Haldi,Sangeet to Happily Ever After. Book your <br />
+            </h2>
+            <h5 className="hidden md:block font-bold mb-4 text-xl">
+              From Haldi, Sangeet to Happily Ever After. Book your <br />
               Venue That Echoes Your Marriage Story to a Love Story
-            </Typography>
+            </h5>
             <CustomButton label="Know More" padding={"10px 20px"} />
-          </Stack>
-          <Typography
-            sx={{
-              position: "absolute",
-              fontSize:h3_fontSize,
-              bottom: 0,
-              width: "100%",
-              alignSelf: "center",
-              textAlign: "center",
-              fontWeight: "bold",
-              paddingY: 2,
-              display: {
-                xs: "none",
-                md: "block",
-              },
-            }}
-          >
+          </div>
+          <h3 className="absolute bottom-0 w-full text-center font-bold py-2 hidden md:block text-4xl">
             To Start, Check With Availability
-          </Typography>
+          </h3>
         </div>
-        <Stack
-          sx={{
-            backgroundColor: primaryColor,
-            flexDirection: { xs: "column", md: "row" },
-            justifyContent: "center",
-            padding: 5,
-          }}
-        >
-          <Stack
-            sx={{
-              display: { xs: "none", md: "block" },
-              width: { xs: "100%", md: "50%" },
-              height: { xs: "96vw", md: "70vw" },
-              position: "relative",
-            }}
+        <div className="p-10 bg-primary flex flex-col md:flex-row">
+          <div
+            className="relative w-full h-auto"
+            sx={
+              {
+                // display: { xs: "none", md: "block" },
+                // width: { xs: "100%", md: "50%" },
+                // height: { xs: "96vw", md: "70vw" },
+                // position: "relative",
+              }
+            }
           >
             <Image
               src="/design1.jpg"
@@ -112,17 +71,8 @@ export default function Home() {
               fill
               priority
             />
-          </Stack>
-          <Stack
-            spacing={2}
-            sx={{
-              backgroundColor: "white",
-              flexGrow: 1,
-              padding: 2,
-              borderRadius: 2,
-              width: { xs: "100%", md: "50%" },
-            }}
-          >
+          </div>
+          <div className="bg-white p-5 w-full flex flex-col space-y-5 rounded-md">
             <Typography
               variant="h3"
               sx={{
@@ -183,8 +133,8 @@ export default function Home() {
             <TextField label="Name" />
             <TextField label="Phone No." />
             <CustomButton label="Submit" />
-          </Stack>
-        </Stack>
+          </div>
+        </div>
         <section>
           <Stack
             sx={{

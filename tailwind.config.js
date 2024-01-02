@@ -18,3 +18,4 @@ export const theme = {
 };
 export const plugins = [];
 
+// export const mode = 'jit'; // Enable JIT mode
