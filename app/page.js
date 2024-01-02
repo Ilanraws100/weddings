@@ -48,73 +48,44 @@ export default function Home() {
         </div>
         <div className="p-5 md:p-10 lg:p-20 bg-primary flex flex-col md:flex-row">
           <div className="relative w-full h-dvh md:h-auto">
-            <Image src="/design1.jpg" alt="Bengali wedding arrangements" fill priority />
+            <Image
+              src="/design1.jpg"
+              alt="Bengali wedding arrangements"
+              fill
+              priority
+            />
           </div>
           <QueryForm />
         </div>
         <section>
-          <Stack
-            sx={{
-              backgroundColor: secondaryColor,
-              paddingY: 10,
-              paddingX: { xs: 2, md: 10 },
-              textAlign: "justify",
-            }}
-          >
-            <Typography
-              gutterBottom
-              sx={{
-                fontWeight: "bold",
-                paddingY: 2,
-                fontSize: h3_fontSize,
-                textAlign: { xs: "justify", md: "center" },
-              }}
-            >
-              Why Aroma Eventz ?
-            </Typography>
-            <Typography
-              variant="h5"
-              sx={{ textAlign: { xs: "justify", md: "center" } }}
-            >
+          <div className="p-5 md:p-10 lg:p-20 bg-secondary space-y-10">
+            <h3 className="font-bold text-3xl text-center">
+              Why Aroma Eventz?
+            </h3>
+            <h5 className="text-lg md:text-xl text-center">
               &quot;Choose Elegance and Sophistication with Aroma Events: The
               Perfect Venue for an Unforgettable and Majestic Marriage
-              Celebration. &quot;
-            </Typography>
-            <Stack
-              direction={{ xs: "column-reverse", md: "row" }}
-              justifyContent={"space-between"}
-              spacing={5}
-              sx={{ paddingTop: { xs: 5, md: 10, lg: 20 } }}
-            >
-              <Stack
-                spacing={5}
-                alignItems={"start"}
-                sx={{ textAlign: { xs: "justify", md: "left" } }}
-                maxWidth={{ xs: "100%", md: "50%" }}
-              >
-                <Typography sx={{ fontWeight: "bold", fontSize: h3_fontSize }}>
+              Celebration.&quot;
+            </h5>
+            <div className="flex flex-col md:flex-row-reverse justify-between items-center md:items-start md:pt-20 space-y-10  md:space-y-0">
+              <div className="relative w-full h-[96vw] md:h-[40vw] md:ml-10">
+                <Image src="/design2.jpg" alt="Design" fill priority />
+              </div>
+              <div className="flex flex-col space-y-5 items-start w-full">
+                <h3 className="font-bold text-4xl leading-tight">
                   Blending Tradition with Elegance Where Dreams Take Flight
-                </Typography>
-                <Typography variant="h5">
+                </h3>
+                <h5 className="text-lg">
                   Two hearts uniting in a lifelong journey of love and
                   companionship. May your marriage be a beautiful blend of
                   laughter, support, and endless love, blossoming with each
                   passing day into a timeless tale of togetherness and joy.
-                </Typography>
+                </h5>
                 <AromaEventzButton />
                 <ContactAromaButton />
-              </Stack>
-              <Stack
-                sx={{
-                  position: "relative",
-                  width: { xs: "100%", md: "50%" },
-                  height: { xs: "96vw", md: "40vw" },
-                }}
-              >
-                <Image src="/design2.jpg" alt="Design" fill priority />
-              </Stack>
-            </Stack>
-          </Stack>
+              </div>
+            </div>
+          </div>
         </section>
         <section>
           <Stack
