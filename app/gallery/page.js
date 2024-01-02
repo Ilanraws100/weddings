@@ -20,16 +20,8 @@ export default function Gallery() {
         >
           {" "}
           <Image src="/decor2.jpg" alt="Design" fill priority />
-          <div
-            style={{
-              backgroundColor: "rgb(0,0,0,0.2)",
-              color: "white",
-              position: "relative",
-              justifyContent: "center",
-              alignItems: "start",
-            }}
-          >
-            <h2 className="font-bold mb-4 text-4xl md:text-5xl md:leading-normal p-10">
+          <div className="p-10 bg-[rgb(0,0,0,0.2)] relative text-white justify-center items-start">
+            <h2 className="font-bold mb-4 text-4xl md:text-5xl md:leading-normal">
               Gallery of Aroma Eventz: <br /> Capturing Moments,
               <br /> Creating Memories
             </h2>

@@ -15,7 +15,7 @@ export default function FooterSection() {
         <input
           type="text"
           placeholder="example@gmail.com"
-          className="bg-white w-auto md:w-96 h-auto text-sm p-2 text-black"
+          className="bg-white w-auto md:w-96 h-auto text-sm p-2 text-black rounded-sm"
           aria-label="Enter your email here"
         />
         <CustomButton label="Subscribe" />
