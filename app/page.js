@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Header from "@/components/header";
-import { Button, MenuItem, Stack, TextField, Typography } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
 import CustomButton, {
   AromaEventzButton,
   ContactAromaButton,
@@ -12,13 +12,8 @@ import {
   secondaryColor,
   tertiaryColor,
 } from "@/consts";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
-import CustomDatePicker from "@/components/datePicker";
 import FooterSection from "@/components/footer";
+import QueryForm from "@/components/queryForm";
 export default function Home() {
   return (
     <>
@@ -51,89 +46,11 @@ export default function Home() {
             To Start, Check With Availability
           </h3>
         </div>
-        <div className="p-10 bg-primary flex flex-col md:flex-row">
-          <div
-            className="relative w-full h-auto"
-            sx={
-              {
-                // display: { xs: "none", md: "block" },
-                // width: { xs: "100%", md: "50%" },
-                // height: { xs: "96vw", md: "70vw" },
-                // position: "relative",
-              }
-            }
-          >
-            <Image
-              src="/design1.jpg"
-              alt="Design"
-              // width={600}
-              // height={650}
-              fill
-              priority
-            />
+        <div className="p-5 md:p-10 lg:p-20 bg-primary flex flex-col md:flex-row">
+          <div className="relative w-full h-dvh md:h-auto">
+            <Image src="/design1.jpg" alt="Bengali wedding arrangements" fill priority />
           </div>
-          <div className="bg-white p-5 w-full flex flex-col space-y-5 rounded-md">
-            <Typography
-              variant="h3"
-              sx={{
-                fontFamily: "Lily Script One, cursive",
-              }}
-            >
-              Aroma Eventz
-            </Typography>
-            <Typography variant="h5">Let us plan your dream event</Typography>
-            <TextField label="Event Type" select>
-              <MenuItem value="Wedding">Wedding</MenuItem>
-              <MenuItem value="Birthday">Birthday</MenuItem>
-              <MenuItem value="Reception">Reception</MenuItem>
-            </TextField>
-            <FormControl>
-              <FormLabel id="demo-row-radio-buttons-group-label">
-                How many guests are you planning for?
-              </FormLabel>
-              <RadioGroup
-                row
-                aria-labelledby="demo-row-radio-buttons-group-label"
-                name="row-radio-buttons-group"
-              >
-                {["0-20", "20-50", "50-100", "100-200", "200-500", "500+"].map(
-                  (label) => (
-                    <FormControlLabel
-                      key={label}
-                      value={label}
-                      control={<Radio />}
-                      label={label}
-                    />
-                  )
-                )}
-              </RadioGroup>
-            </FormControl>
-            <FormControl>
-              <FormLabel id="demo-row-radio-buttons-group-label">
-                Budget Per Person
-              </FormLabel>
-              <RadioGroup
-                row
-                aria-labelledby="demo-row-radio-buttons-group-label"
-                name="row-radio-buttons-group"
-              >
-                {["100-500", "500-1000", "1000-2000", "2000-5000", "5000+"].map(
-                  (label) => (
-                    <FormControlLabel
-                      key={label}
-                      value={label}
-                      control={<Radio />}
-                      label={label}
-                    />
-                  )
-                )}
-              </RadioGroup>
-            </FormControl>
-            <CustomDatePicker />
-            <TextField label="Name" />
-            <TextField label="Phone No." />
-            <CustomButton label="Submit" />
-          </div>
+          <QueryForm />
         </div>
         <section>
           <Stack

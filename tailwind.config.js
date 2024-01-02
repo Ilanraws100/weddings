@@ -14,6 +14,9 @@ export const theme = {
       secondary: "#F4E8D6", // Custom secondary color
       tertiary: "#BA2943", // Custom tertiary color
     },
+    fontFamily: {
+      lily: ["'Lily Script One'", "cursive"],
+    },
   },
 };
 export const plugins = [];
