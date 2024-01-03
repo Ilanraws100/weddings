@@ -47,7 +47,7 @@ export default function Header(props) {
             </Link>
             <CustomButton
               label="Sign Up"
-              display={{ xs: "none", md: "block" }}
+              display={"hidden md:block"}
             />
             <Button
               sx={{

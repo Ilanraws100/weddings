@@ -75,10 +75,11 @@ export function ContactAromaButton() {
 export default function CustomButton(props) {
   return (
     <button
-      className={`text-black bg-white font-bold m-2 hover:bg-transparent hover:text-white rounded-sm`}
+      className={`text-black bg-white font-bold m-2 hover:bg-transparent hover:text-white rounded-sm + ${
+        props.display ? props.display : "block"
+      }`}
       style={{
         padding: props.padding || "5px 20px",
-        display: props.display,
       }}
     >
       {props.label}

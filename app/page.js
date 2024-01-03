@@ -1,15 +1,11 @@
 import Image from "next/image";
 import Header from "@/components/header";
-import { Button, Stack, Typography } from "@mui/material";
+import { Button } from "@mui/material";
 import CustomButton, {
   AromaEventzButton,
   ContactAromaButton,
 } from "@/components/customButton";
 import {
-  h2_fontSize,
-  h3_fontSize,
-  primaryColor,
-  secondaryColor,
   tertiaryColor,
 } from "@/consts";
 import FooterSection from "@/components/footer";
@@ -34,7 +30,7 @@ export default function Home() {
             alt="Mandap decoration"
             fill
             priority
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
           />
           <div className="hidden md:block p-10 bg-[rgb(0,0,0,0.2)] relative">
             <h2 className="font-bold mb-4 text-5xl leading-relaxed">
@@ -59,7 +55,7 @@ export default function Home() {
               alt="Bengali wedding arrangements"
               fill
               priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
             />
           </div>
           <QueryForm />
@@ -71,17 +67,17 @@ export default function Home() {
             </h3>
             <h5 className="text-lg md:text-xl text-center">
               &quot;Choose Elegance and Sophistication with Aroma Events: The
-              Perfect Venue for an Unforgettable and Majestic Marriage
+              Perfect Venue for an <br/>Unforgettable and Majestic Marriage
               Celebration.&quot;
             </h5>
             <div className="flex flex-col md:flex-row-reverse justify-between items-center md:items-start md:pt-20 space-y-10  md:space-y-0">
               <div className="relative w-full h-[96vw] md:h-[40vw] md:ml-10">
                 <Image
                   src="/design2.jpg"
-                  alt="Design"
+                  alt="Wedding Rituals"
                   fill
                   priority
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
                 />
               </div>
               <div className="flex flex-col space-y-5 items-start w-full">
@@ -107,7 +103,7 @@ export default function Home() {
             </h3>
             <h5 className="text-2xl text-center">
               Choose Elegance and Sophistication with Aroma Events: The Perfect
-              Venue for an Unforgettable and Majestic Marriage Celebration.
+              Venue for an <br/>Unforgettable and Majestic Marriage Celebration.
             </h5>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {[
@@ -166,7 +162,7 @@ export default function Home() {
                   alt="Delicious Bengali Food"
                   fill
                   priority
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
                 />{" "}
               </div>
               <div className="flex flex-col space-y-5 items-start w-full">
@@ -194,12 +190,12 @@ export default function Home() {
             alt="Beautiful Bengali Marriage"
             fill
             priority
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
           />
           <div className="absolute bottom-0 w-full py-5 bg-[rgb(0,0,0,0.5)] text-white hidden md:flex-col md:flex items-center">
-            <h2 className="font-bold text-3xl p-5">
-              More question about your Dream Event and its flawless
-              arrangements?
+            <h2 className="font-bold text-5xl p-5 text-center leading-relaxed">
+              More question about your Dream Event <br />
+              and its flawless arrangements?
             </h2>
             <AromaEventzButton />
           </div>
