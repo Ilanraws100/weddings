@@ -1,5 +1,6 @@
 import CustomButton from "./customButton";
 import CustomDatePicker from "./datePicker";
+import TextField from "./textField";
 
 export default function QueryForm() {
     return (
@@ -82,33 +83,25 @@ export default function QueryForm() {
         </div>
 
         <CustomDatePicker />
-        <div className="w-full max-w-xs">
+        <div className="w-full">
           <label
             htmlFor="name"
             className="block text-sm font-medium text-gray-700"
           >
             Name
           </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
-            placeholder="Enter your name"
-          />
+          <TextField name="name" placeholder="Enter your name"/>
         </div>
-        <div className="w-full max-w-xs">
+        <div className="w-full">
           <label
             htmlFor="phone"
             className="block text-sm font-medium text-gray-700"
           >
             Phone No.
           </label>
-          <input
+          <TextField
             type="number"
-            id="phone"
-            name="name"
-            className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
+            name="phone"
             placeholder="Enter your phone no."
           />
         </div>
@@ -116,3 +109,5 @@ export default function QueryForm() {
       </div>
     );
 }
+
+

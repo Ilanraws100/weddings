@@ -42,7 +42,7 @@ export default function Home() {
               From Haldi, Sangeet to Happily Ever After. Book your <br />
               Venue That Echoes Your Marriage Story to a Love Story
             </h5>
-            <CustomButton label="Know More" padding={"10px 20px"} />
+            <CustomButton label="Know More" href="/about" padding={"10px 20px"} />
           </div>
           <h3 className="absolute bottom-0 w-full text-center font-bold py-2 hidden md:block text-4xl">
             To Start, Check With Availability

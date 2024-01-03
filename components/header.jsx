@@ -47,17 +47,20 @@ export default function Header(props) {
             </Link>
             <CustomButton
               label="Sign Up"
+              href="/signup"
               display={"hidden md:block"}
             />
-            <Button
-              sx={{
-                color: "white",
-                marginLeft: "auto",
-                display: { xs: "none", md: "block" },
-              }}
-            >
-              Sign In
-            </Button>{" "}
+            <Link href="/login">
+              <Button
+                sx={{
+                  color: "white",
+                  marginLeft: "auto",
+                  display: { xs: "none", md: "block" },
+                }}
+              >
+                Sign In
+              </Button>
+            </Link>
           </Toolbar>
         </AppBar>
       </ElevationScroll>

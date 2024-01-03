@@ -1,10 +1,10 @@
 "use client";
 import { Button } from "@mui/material";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { primaryColor } from "@/consts";
+import Link from "next/link";
 
 export function AromaEventzButton(props) {
   return (
+    <Link href={props.href || "/login"}>
     <button
       className={`font-bold max-w-xs rounded-full text-lg py-2 px-4 hover:bg-black ${
         props.backgroundColor ? "bg-[props.backgroundColor]" : "bg-primary"
@@ -28,6 +28,7 @@ export function AromaEventzButton(props) {
         </svg>
       </span>
     </button>
+    </Link>
 
     // <Button
     //   variant="contained"
@@ -53,6 +54,7 @@ export function AromaEventzButton(props) {
 }
 export function ContactAromaButton() {
   return (
+    <Link href="/contact">
     <Button
       variant="outlined"
       sx={{
@@ -70,10 +72,12 @@ export function ContactAromaButton() {
     >
       Contact Aroma
     </Button>
+    </Link>
   );
 }
 export default function CustomButton(props) {
   return (
+    <Link href={props.href??"/login"}>
     <button
       className={`text-black bg-white font-bold m-2 hover:bg-transparent hover:text-white rounded-sm + ${
         props.display ? props.display : "block"
@@ -84,5 +88,6 @@ export default function CustomButton(props) {
     >
       {props.label}
     </button>
+    </Link>
   );
 }
