@@ -28,3 +28,21 @@ export const h3_fontSize = {
   xl: "3.75rem",
   xxl: "4.5rem",
 };
+
+export const events = [
+  "For Wedding Event",
+  "For Anniversary Event",
+  "For Birthday Party",
+  "For Haldi Event",
+  "For Reception",
+  "For Engagement",
+  "For Corporate Event",
+  "For Poite Ceremony",
+  "For Mukhe Bhat",
+  "For Bou Bhat",
+  "For Mehndi Function",
+  "For Baby Shower",
+  "For Bridal Party",
+  "For Aibudhor Bhat",
+  "For Housewarming",
+];

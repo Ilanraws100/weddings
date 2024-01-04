@@ -5,9 +5,7 @@ import CustomButton, {
   AromaEventzButton,
   ContactAromaButton,
 } from "@/components/customButton";
-import {
-  tertiaryColor,
-} from "@/consts";
+import { events, tertiaryColor } from "@/consts";
 import FooterSection from "@/components/footer";
 import QueryForm from "@/components/queryForm";
 export default function Home() {
@@ -42,22 +40,17 @@ export default function Home() {
               From Haldi, Sangeet to Happily Ever After. Book your <br />
               Venue That Echoes Your Marriage Story to a Love Story
             </h5>
-            <CustomButton label="Know More" href="/about" padding={"10px 20px"} />
+            <CustomButton
+              label="Know More"
+              href="/about"
+              padding={"10px 20px"}
+            />
           </div>
           <h3 className="absolute bottom-0 w-full text-center font-bold py-2 hidden md:block text-4xl">
             To Start, Check With Availability
           </h3>
         </div>
         <div className="p-5 md:p-10 lg:p-20 bg-primary flex flex-col md:flex-row">
-          <div className="relative w-full h-dvh md:h-auto">
-            <Image
-              src="/design1.jpg"
-              alt="Bengali wedding arrangements"
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
-            />
-          </div>
           <QueryForm />
         </div>
         <section>
@@ -67,8 +60,8 @@ export default function Home() {
             </h3>
             <h5 className="text-lg md:text-xl text-center">
               &quot;Choose Elegance and Sophistication with Aroma Events: The
-              Perfect Venue for an <br/>Unforgettable and Majestic Marriage
-              Celebration.&quot;
+              Perfect Venue for an <br />
+              Unforgettable and Majestic Marriage Celebration.&quot;
             </h5>
             <div className="flex flex-col md:flex-row-reverse justify-between items-center md:items-start md:pt-20 space-y-10  md:space-y-0">
               <div className="relative w-full h-[96vw] md:h-[40vw] md:ml-10">
@@ -103,26 +96,11 @@ export default function Home() {
             </h3>
             <h5 className="text-2xl text-center">
               Choose Elegance and Sophistication with Aroma Events: The Perfect
-              Venue for an <br/>Unforgettable and Majestic Marriage Celebration.
+              Venue for an <br />
+              Unforgettable and Majestic Marriage Celebration.
             </h5>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {[
-                "For Wedding Event",
-                "For Anniversary Event",
-                "For Birthday Party",
-                "For Haldi Event",
-                "For Reception",
-                "For Engagement",
-                "For Corporate Event",
-                "For Poite Ceremony",
-                "For Mukhe Bhat",
-                "For Bou Bhat",
-                "For Mehndi Function",
-                "For Baby Shower",
-                "For Bridal Party",
-                "For Aibudhor Bhat",
-                "For Housewarming",
-              ].map((label) => (
+              {events.map((label) => (
                 <Button
                   key={label}
                   sx={{
