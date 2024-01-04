@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Header from "@/components/header";
-import { Button } from "@mui/material";
 import CustomButton, {
   AromaEventzButton,
   ContactAromaButton,
 } from "@/components/customButton";
-import { events, tertiaryColor } from "@/consts";
+import { events } from "@/consts";
 import FooterSection from "@/components/footer";
 import QueryForm from "@/components/queryForm";
+import Link from "next/link";
 export default function Home() {
   return (
     <>
@@ -101,32 +101,31 @@ export default function Home() {
             </h5>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {events.map((label) => (
-                <Button
-                  key={label}
-                  sx={{
-                    color: "white",
-                    textTransform: "none",
-                    fontWeight: "bold",
-                    backgroundColor: tertiaryColor,
-                    borderRadius: 5,
-                    padding: 1.5,
-                    fontSize: 20,
-                  }}
-                >
-                  {label}
-                </Button>
+                <Link key={label} href={"/login"}>
+                  <button
+                    key={label}
+                    className="bg-tertiary font-bold px-4 py-2 rounded-full text-lg"
+                    sx={{
+                      fontWeight: "bold",
+                      borderRadius: 5,
+                      padding: 1.5,
+                      fontSize: 20,
+                    }}
+                  >
+                    {label}
+                  </button>
+                </Link>
               ))}
             </div>
             <AromaEventzButton
               label="Sign Up To Explore"
-              backgroundColor="white"
-              color="rgb(0, 0, 0, 0.66)"
+              style={"bg-white text-gray-800"}
             />
           </div>
         </section>
         <section>
           <div className="p-5 md:p-10 lg:p-20 bg-secondary space-y-10">
-            <h2 className="font-bold text-3xl text-center pt-20">
+            <h2 className="font-bold text-3xl text-center pt-10">
               Delicious food, the mantra of a Bengali Event!
             </h2>
             <h5 className="text-lg md:text-xl text-center hidden md:block">

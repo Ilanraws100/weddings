@@ -5,29 +5,29 @@ import Link from "next/link";
 export function AromaEventzButton(props) {
   return (
     <Link href={props.href || "/login"}>
-    <button
-      className={`font-bold max-w-xs rounded-full text-lg py-2 px-4 hover:bg-black ${
-        props.backgroundColor ? "bg-[props.backgroundColor]" : "bg-primary"
-      } ${props.color ? "text-[props.color]" : "text-white"}`}
-    >
-      {props.label || "Go To Aroma Events"}
-      <span className="ml-2 inline-block align-middle">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M5 12h14m-7-7l7 7-7 7"
-          />
-        </svg>
-      </span>
-    </button>
+      <button
+        className={`font-bold max-w-xs rounded-full text-lg py-2 px-4 hover:bg-black ${
+          props.style ? props.style : "bg-primary text-white"}`
+        }
+      >
+        {props.label || "Go To Aroma Events"}
+        <span className="ml-2 inline-block align-middle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M5 12h14m-7-7l7 7-7 7"
+            />
+          </svg>
+        </span>
+      </button>
     </Link>
 
     // <Button
@@ -55,39 +55,39 @@ export function AromaEventzButton(props) {
 export function ContactAromaButton() {
   return (
     <Link href="/contact">
-    <Button
-      variant="outlined"
-      sx={{
-        color: "black",
-        borderColor: "black",
-        fontWeight: "bold",
-        borderRadius: 5,
-        padding: "10px 20px",
-        ":hover": {
-          borderColor: "blanchedalmond",
-          backgroundColor: "blanchedalmond",
-          color: "deeppink",
-        },
-      }}
-    >
-      Contact Aroma
-    </Button>
+      <Button
+        variant="outlined"
+        sx={{
+          color: "black",
+          borderColor: "black",
+          fontWeight: "bold",
+          borderRadius: 5,
+          padding: "10px 20px",
+          ":hover": {
+            borderColor: "blanchedalmond",
+            backgroundColor: "blanchedalmond",
+            color: "deeppink",
+          },
+        }}
+      >
+        Contact Aroma
+      </Button>
     </Link>
   );
 }
 export default function CustomButton(props) {
   return (
-    <Link href={props.href??"/login"}>
-    <button
-      className={`text-black bg-white font-bold m-2 hover:bg-transparent hover:text-white rounded-sm + ${
-        props.display ? props.display : "block"
-      }`}
-      style={{
-        padding: props.padding || "5px 20px",
-      }}
-    >
-      {props.label}
-    </button>
+    <Link href={props.href ?? "/login"}>
+      <button
+        className={`text-black bg-white font-bold m-2 hover:bg-transparent hover:text-white rounded-sm + ${
+          props.display ? props.display : "block"
+        }`}
+        style={{
+          padding: props.padding || "5px 20px",
+        }}
+      >
+        {props.label}
+      </button>
     </Link>
   );
 }
