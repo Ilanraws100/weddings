@@ -1,6 +1,8 @@
 "use client";
 import { Button } from "@mui/material";
 import Link from "next/link";
+import ReplyIcon from "@mui/icons-material/Reply";
+import IconButton from "@mui/material/IconButton";
 
 export function AromaEventzButton(props) {
   return (
@@ -73,6 +75,30 @@ export function ContactAromaButton() {
         Contact Aroma
       </Button>
     </Link>
+  );
+}
+
+export function ShareButton(){
+   const handleShare = async () => {
+     if (navigator.share) {
+       try {
+         await navigator.share({
+           title: "Aroma Events",
+           text: "Complete Bengali Event Management Services- Decoration, Venue and Catering Services for your wedding, reception, or any other event in Kolkata.",
+           url: "https://aromaeventz.com",
+         });
+       } catch (error) {
+         console.error("Error sharing content:", error);
+       }
+     } else {
+       // Fallback for browsers that do not support the Web Share API
+       console.log("Web Share not supported. Implement fallback here.");
+     }
+   };
+  return (
+    <IconButton aria-label="email" size="large" onClick={handleShare}>
+      <ReplyIcon fontSize="inherit" className="scale-x-[-1]" />
+    </IconButton>
   );
 }
 export default function CustomButton(props) {

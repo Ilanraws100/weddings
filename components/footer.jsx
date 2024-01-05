@@ -1,4 +1,4 @@
-import CustomButton from "@/components/customButton";
+import CustomButton, { ShareButton } from "@/components/customButton";
 import IconButton from "@mui/material/IconButton";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -69,6 +69,7 @@ export default function FooterSection() {
                 <WhatsAppIcon fontSize="inherit" />
               </IconButton>
             </Link>
+            <ShareButton />
           </div>
           <p>©Copyright 2024 | Aroma’s Eventz </p>
         </div>
