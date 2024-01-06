@@ -1,8 +1,20 @@
+"use client";
 import TextField from "@/components/textField";
 import Image from "next/image";
 import Link from "next/link";
+import signup from "@/actions/signup";
 
 export default function SignUp() {
+  const signUp = async (e) => {
+    e.preventDefault();
+    console.log("hi", e.target[0].value);
+   const data = await signup({
+      email: e.target.username.value,
+      password: e.target.password.value,
+      name: "test",
+    });
+    console.log(data);
+  };
   return (
     <>
       <header>
@@ -24,7 +36,7 @@ export default function SignUp() {
             <h3 className="font-bold text-3xl mb-5 leading-relaxed">
               SignUp to your account
             </h3>
-            <form className="flex flex-col space-y-5">
+            <form className="flex flex-col space-y-5" onSubmit={signUp}>
               <div>
                 <label
                   htmlFor="username"
