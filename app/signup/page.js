@@ -8,7 +8,7 @@ export default function SignUp() {
   const signUp = async (e) => {
     e.preventDefault();
     console.log("hi", e.target[0].value);
-   const data = await signup({
+    const data = await signup({
       email: e.target.username.value,
       password: e.target.password.value,
       name: "test",
@@ -17,48 +17,82 @@ export default function SignUp() {
   };
   return (
     <>
-      <header>
-        <h1 className="text-3xl font-lily mx-10 my-5">Aroma Eventz</h1>
-      </header>
-      <main className="px-10">
+      <main className="">
         <section className="flex flex-col md:flex-row items-center justify-around">
-          <div className="relative w-full max-w-md max-h-[28rem] h-[100vw] md:h-[50vw]">
-            <Image
-              src="/login.jpg"
-              alt="login"
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
-            />
+          <div className="bg-gradient-to-br from-blue-500 to-red-500 h-screen w-full flex flex-col items-center justify-around">
+            <h5 className="text-white font-bold text-xl">
+              Your Dream Event, Just a Click Away,<br/> Plan for a Perfect
+              Celebration!
+            </h5>
+            <div className="relative w-full max-w-md max-h-[28rem] h-[100vw] md:h-[50vw] rounded-md">
+              <Image
+                src="/signup.jpg"
+                alt="login"
+                fill
+                priority
+                className="rounded-3xl"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+              />
+            </div>{" "}
           </div>
           <div className="flex flex-col w-full md:mx-10 max-w-md py-5">
-            <h4>Welcome to Aroma Eventz</h4>
-            <h3 className="font-bold text-3xl mb-5 leading-relaxed">
-              SignUp to your account
-            </h3>
+            <h1 className="text-3xl font-lily text-primary mb-4">
+              Aroma Eventz
+            </h1>
+            <h3 className="font-bold text-2xl mb-1 leading-relaxed">
+              Create account
+            </h3>{" "}
+            <h4 className="text-sm mb-4">
+              For Event Planning, Catering or Wedding.
+            </h4>
             <form className="flex flex-col space-y-5" onSubmit={signUp}>
-              <div>
-                <label
-                  htmlFor="username"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Username
-                </label>
-                <TextField name="username" placeholder="username" />
-              </div>
-              <div>
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Password
-                </label>
+              <div className="grid grid-cols-2 gap-5">
+                <TextField
+                  name="firstName"
+                  label="First Name"
+                  placeholder="First Name"
+                />
+                <TextField
+                  name="lastName"
+                  label="Last Name"
+                  placeholder="Last Name"
+                />
+                <TextField name="email" label="Email" placeholder="Email" />
+                <TextField
+                  name="whatsappNo"
+                  label="Whatsapp No"
+                  placeholder="Whatsapp No"
+                />
                 <TextField
                   type="password"
                   name="password"
+                  label="Password"
+                  placeholder="password"
+                />
+                <TextField
+                  type="password"
+                  name="confirmPassword"
+                  label="Confirm Password"
                   placeholder="password"
                 />
               </div>
+              <label className="inline-flex items-center">
+                <input
+                  type="checkbox"
+                  className="form-checkbox text-indigo-600"
+                />
+                <span className="ml-2">
+                  I agree to all the{" "}
+                  <Link className="text-primary" href="/t&c">
+                    Terms
+                  </Link>{" "}
+                  and{" "}
+                  <Link className="text-primary" href="/t&c">
+                    Privacy policy
+                  </Link>
+                </span>
+              </label>
+
               <input
                 className="bg-primary text-white font-bold rounded-sm p-2"
                 type="submit"

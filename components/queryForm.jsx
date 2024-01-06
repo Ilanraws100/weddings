@@ -172,7 +172,7 @@ function editableForm(handleSubmit, handleDateChange) {
       <div className="w-full">
         <label
           htmlFor="name"
-          className="block text-sm font-medium text-gray-700"
+          className="block text-sm font-medium text-gray-700 mb-1"
         >
           Event Date
         </label>
@@ -183,28 +183,13 @@ function editableForm(handleSubmit, handleDateChange) {
           className="bg-white text-gray-700 border border-gray-300 rounded-lg py-2 px-4 block w-full focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
         />
       </div>
-      <div className="w-full">
-        <label
-          htmlFor="name"
-          className="block text-sm font-medium text-gray-700"
-        >
-          Name
-        </label>
-        <TextField name="name" placeholder="Enter your name" />
-      </div>
-      <div className="w-full">
-        <label
-          htmlFor="phone"
-          className="block text-sm font-medium text-gray-700"
-        >
-          Phone No.
-        </label>
-        <TextField
-          type="number"
-          name="phoneNo"
-          placeholder="Enter your phone no."
-        />
-      </div>
+      <TextField name="name" label="Name" placeholder="Enter your name" />
+      <TextField
+        type="number"
+        name="phoneNo"
+        label="Phone No."
+        placeholder="Enter your phone no."
+      />
       <button type="submit">Submit</button>
     </form>
   );
