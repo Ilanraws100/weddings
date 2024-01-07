@@ -104,13 +104,7 @@ export default function Home() {
                 <Link key={label} href={"/login"}>
                   <button
                     key={label}
-                    className="bg-tertiary font-bold px-4 py-2 rounded-full text-lg"
-                    sx={{
-                      fontWeight: "bold",
-                      borderRadius: 5,
-                      padding: 1.5,
-                      fontSize: 20,
-                    }}
+                    className="bg-tertiary font-bold px-4 py-2 rounded-full text-lg min-w-full"
                   >
                     {label}
                   </button>

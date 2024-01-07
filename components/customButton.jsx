@@ -105,7 +105,7 @@ export default function CustomButton(props) {
   return (
     <Link href={props.href ?? "/login"}>
       <button
-        className={`text-black bg-white font-bold m-2 hover:bg-transparent hover:text-white rounded-sm + ${
+        className={`text-black bg-white font-bold hover:bg-transparent hover:text-white rounded-sm + ${
           props.display ? props.display : "block"
         }`}
         style={{

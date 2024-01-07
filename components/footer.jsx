@@ -15,10 +15,10 @@ export default function FooterSection() {
         <input
           type="text"
           placeholder="example@gmail.com"
-          className="bg-white w-auto md:w-96 h-auto text-sm p-2 m-2 text-black rounded-sm"
+          className="bg-white w-full md:w-96 h-auto text-sm p-2 text-black rounded-sm"
           aria-label="Enter your email here"
         />
-        <CustomButton label="Subscribe" />
+        <CustomButton label="Subscribe" display="w-[100%] md:w-auto" />
       </div>
       <div className="flex flex-col md:flex-row-reverse items-center md:items-end justify-between p-10 space-y-5">
         <div className="flex space-x-5 flex-wrap justify-center">
