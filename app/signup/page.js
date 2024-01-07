@@ -3,23 +3,49 @@ import TextField from "@/components/textField";
 import Image from "next/image";
 import Link from "next/link";
 import signup from "@/actions/signup";
+import { isValidEmail, isValidPhone } from "@/consts";
 
 export default function SignUp() {
   const signUp = async (e) => {
+    try{
     e.preventDefault();
-    console.log("hi", e.target[0].value);
+    if(e.target.password.value !== e.target.confirmpassword.value){
+      alert("Passwords do not match")
+      return
+    }
+    if(e.target.password.value.length < 6){
+      alert("Password must be at least 6 characters")
+      return
+    }
+    if(e.target.firstName.value+e.target.lastName.value.length < 3){
+      alert("Username must be at least 3 characters")
+      return
+    }
+    if(isValidEmail(e.target.email.value) === false){
+      alert("Invalid Email")
+      return
+    }
+    if(isValidPhone(e.target.phone.value) === false){
+      alert("Invalid Phone")
+      return
+    }
     const data = await signup({
-      email: e.target.username.value,
+      name: e.target.firstName.value + " " + e.target.lastName.value,
+      phone: e.target.whatsappNo.value,
+      email: e.target.email.value,
       password: e.target.password.value,
-      name: "test",
     });
     console.log(data);
+    alert('Sign Up Successful')
+    }catch(err){
+      console.log(err)
+      alert(err.message)
+    }
   };
   return (
-    <>
       <main className="">
-        <section className="flex flex-col md:flex-row items-center justify-around">
-          <div className="bg-gradient-to-br from-blue-500 to-red-500 h-screen w-full flex flex-col items-center justify-around">
+        <section className="flex flex-col md:flex-row items-stretch justify-around">
+          <div className="bg-gradient-to-br from-blue-500 to-red-500 h-auto w-full hidden md:flex md:flex-col items-center justify-around p-5">
             <h5 className="text-white font-bold text-xl">
               Your Dream Event, Just a Click Away,<br/> Plan for a Perfect
               Celebration!
@@ -35,7 +61,7 @@ export default function SignUp() {
               />
             </div>{" "}
           </div>
-          <div className="flex flex-col w-full md:mx-10 max-w-md py-5">
+          <div className="flex flex-col w-full md:mx-10 p-10">
             <h1 className="text-3xl font-lily text-primary mb-4">
               Aroma Eventz
             </h1>
@@ -46,7 +72,7 @@ export default function SignUp() {
               For Event Planning, Catering or Wedding.
             </h4>
             <form className="flex flex-col space-y-5" onSubmit={signUp}>
-              <div className="grid grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <TextField
                   name="firstName"
                   label="First Name"
@@ -76,10 +102,10 @@ export default function SignUp() {
                   placeholder="password"
                 />
               </div>
-              <label className="inline-flex items-center">
+              <label className="inline-flex items-start">
                 <input
                   type="checkbox"
-                  className="form-checkbox text-indigo-600"
+                  className="form-checkbox text-indigo-600 mt-1"
                 />
                 <span className="ml-2">
                   I agree to all the{" "}
@@ -122,6 +148,5 @@ export default function SignUp() {
           </div>
         </section>
       </main>
-    </>
   );
 }

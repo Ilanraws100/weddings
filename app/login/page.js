@@ -1,8 +1,16 @@
+'use client'
 import TextField from "@/components/textField";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Login() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    const email = data.get("email");
+    const password = data.get("password");
+    console.log(email, password);
+  }
   return (
     <>
       <header>
@@ -22,29 +30,9 @@ export default function Login() {
           <div className="flex flex-col w-full md:mx-10 max-w-md py-5">
             <h4>Welcome to Aroma Eventz</h4>
             <h3 className="font-bold text-3xl mb-5 leading-relaxed">Login to your account</h3>
-            <form className="flex flex-col space-y-5">
-              <div>
-                <label
-                  htmlFor="username"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Username
-                </label>
-                <TextField name="username" placeholder="username" />
-              </div>
-              <div>
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Password
-                </label>
-                <TextField
-                  type="password"
-                  name="password"
-                  placeholder="password"
-                />
-              </div>
+            <form className="flex flex-col space-y-5" onSubmit={handleSubmit}>
+             <TextField type="email" name="email" label="Email" placeholder="email" />
+             <TextField type="password" name="password" label="Password" placeholder="password" />
               <input
                 className="bg-primary text-white font-bold rounded-sm p-2"
                 type="submit"
