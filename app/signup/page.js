@@ -59,8 +59,8 @@ export default function SignUp() {
   return (
     <main className="">
       <section className="flex flex-col md:flex-row items-stretch justify-around">
-        <div className="bg-gradient-to-br from-blue-500 to-red-500 h-auto w-full hidden md:flex md:flex-col items-center justify-around p-5">
-          <h5 className="text-white font-bold text-xl">
+        <div className="bg-gradient-to-br from-blue-500 to-red-500 md:h-auto w-full hidden md:flex md:flex-col items-center justify-around p-5">
+          <h5 className="text-white font-bold text-xl mb-4">
             Your Dream Event, Just a Click Away,
             <br /> Plan for a Perfect Celebration!
           </h5>
@@ -140,7 +140,7 @@ export default function SignUp() {
               type="submit"
               value="Create New Account Now"
             />
-            <button className="bg-[#2D3748] text-white font-bold rounded-sm p-2  flex items-center justify-center">
+            {/* <button className="bg-[#2D3748] text-white font-bold rounded-sm p-2  flex items-center justify-center">
               <Image
                 src="/google.svg"
                 alt="google"
@@ -149,8 +149,7 @@ export default function SignUp() {
                 className="mr-2"
               />
               Or sign-up with google
-            </button>
-
+            </button> */}
             <p>
               Already have an account?{" "}
               <Link href="/login" className="text-primary font-bold">

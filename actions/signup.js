@@ -16,6 +16,15 @@ const handler = async ({ name, phone, email, password }) => {
     ) {
       throw new Error("Please provide valid details");
     }
+    var userExists = await User.findOne({
+      $or: [{ email: email }, { phone: phone }],
+    });
+    if(userExists?.phone==phone) {
+      throw new Error(`User with phone number: ${phone} already exists`);
+    }
+    if(userExists?.email==email) {
+      throw new Error(`User with email: ${email} already exists`);
+    }
     var passwordhash = await bcrypt.hash(password, 10);
     var usercreated = await User.create({
       name,

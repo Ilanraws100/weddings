@@ -1,16 +1,41 @@
-'use client'
+"use client";
+import login from "@/actions/login";
 import TextField from "@/components/textField";
+import { isValidEmail,isValidPhone } from "@/consts";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Login() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const data = new FormData(e.target);
-    const email = data.get("email");
-    const password = data.get("password");
-    console.log(email, password);
-  }
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      if (e.target.password.value.length < 6) {
+        alert("Password must be at least 6 characters");
+        return;
+      }
+      if (isValidEmail(e.target.username.value)) {
+        const data = await login({
+          email: e.target.username.value,
+          password: e.target.password.value,
+        });
+        console.log(data);
+        alert("Login successful");
+      } else if (isValidPhone(e.target.username.value)) {
+        const data = await login({
+          phone: e.target.username.value,
+          password: e.target.password.value,
+        });
+        console.log(data);
+        alert("Login successful");
+      } else {
+        alert("Invalid email or phone number");
+        return;
+      }
+    } catch (error) {
+      console.log(error);
+      alert(error.message);
+    }
+  };
   return (
     <>
       <header>
@@ -29,16 +54,27 @@ export default function Login() {
           </div>
           <div className="flex flex-col w-full md:mx-10 max-w-md py-5">
             <h4>Welcome to Aroma Eventz</h4>
-            <h3 className="font-bold text-3xl mb-5 leading-relaxed">Login to your account</h3>
+            <h3 className="font-bold text-3xl mb-5 leading-relaxed">
+              Login to your account
+            </h3>
             <form className="flex flex-col space-y-5" onSubmit={handleSubmit}>
-             <TextField type="email" name="email" label="Email" placeholder="email" />
-             <TextField type="password" name="password" label="Password" placeholder="password" />
+              <TextField
+                name="username"
+                label="Email or Phone number"
+                placeholder="email or phone number"
+              />
+              <TextField
+                type="password"
+                name="password"
+                label="Password"
+                placeholder="password"
+              />
               <input
                 className="bg-primary text-white font-bold rounded-sm p-2"
                 type="submit"
                 value="Login Now"
               />
-              <button
+              {/* <button
                 className="bg-[#2D3748] text-white font-bold rounded-sm p-2  flex items-center justify-center"
                 type="submit"
               >
@@ -50,8 +86,7 @@ export default function Login() {
                   className="mr-2"
                 />
                 Or sign-in with google
-              </button>
-
+              </button> */}
               <p>
                 Don&apos;t have an account?{" "}
                 <Link href="/signup" className="text-primary font-bold">
