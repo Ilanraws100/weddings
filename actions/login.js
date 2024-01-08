@@ -3,6 +3,7 @@ import connectDB from "@/middleware/mongodb";
 import bcrypt from "bcrypt";
 import User from "@/models/user";
 import { isValidEmail, isValidPhone } from "@/consts";
+import { redirect } from "next/navigation";
 
 const handler = async ({ phone, email, password }) => {
   try {
@@ -26,15 +27,15 @@ const handler = async ({ phone, email, password }) => {
     if (!isMatch) {
       throw new Error("Invalid credentials");
     }
-
-    return {
-      name: user.name,
-      email: user.email,
-      phone: user.phone,
-    };
+    // return {
+    //   name: user.name,
+    //   email: user.email,
+    //   phone: user.phone,
+    // };
   } catch (error) {
     throw new Error(error.message);
   }
+   return redirect("/dashboard/chooseDate");
 };
 
 export default connectDB(handler);

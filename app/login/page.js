@@ -1,7 +1,7 @@
 "use client";
 import login from "@/actions/login";
 import TextField from "@/components/textField";
-import { isValidEmail,isValidPhone } from "@/consts";
+import { isValidEmail, isValidPhone } from "@/consts";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,19 +14,15 @@ export default function Login() {
         return;
       }
       if (isValidEmail(e.target.username.value)) {
-        const data = await login({
+        login({
           email: e.target.username.value,
           password: e.target.password.value,
         });
-        console.log(data);
-        alert("Login successful");
       } else if (isValidPhone(e.target.username.value)) {
-        const data = await login({
+        login({
           phone: e.target.username.value,
           password: e.target.password.value,
         });
-        console.log(data);
-        alert("Login successful");
       } else {
         alert("Invalid email or phone number");
         return;
