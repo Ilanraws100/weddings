@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export const content = [
-      "./app/**/*.{js,ts,jsx,tsx,mdx}",
-      "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-      "./components/**/*.{js,ts,jsx,tsx,mdx}",
+  "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+  "./components/**/*.{js,ts,jsx,tsx,mdx}",
 
-      // Or if using `src` directory:
-      "./src/**/*.{js,ts,jsx,tsx,mdx}"
+  // Or if using `src` directory:
+  "./src/**/*.{js,ts,jsx,tsx,mdx}",
 ];
 export const theme = {
   extend: {
@@ -13,6 +13,8 @@ export const theme = {
       primary: "#CC2D4A", // Custom primary color
       secondary: "#F4E8D6", // Custom secondary color
       tertiary: "#BA2943", // Custom tertiary color
+      violet1: "#BC1A6E",
+      linkColor: "#063755",
     },
     fontFamily: {
       lily: ["'Lily Script One'", "cursive"],

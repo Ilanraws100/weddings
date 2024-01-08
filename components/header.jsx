@@ -9,6 +9,7 @@ import { primaryColor } from "@/consts";
 import { Button } from "@mui/material";
 import CustomButton from "./customButton";
 import Link from "next/link";
+import Image from "next/image";
 
 function ElevationScroll({ children, window }) {
   const trigger = useScrollTrigger({
@@ -64,6 +65,30 @@ export default function Header(props) {
           </Toolbar>
         </AppBar>
       </ElevationScroll>
+    </header>
+  );
+}
+
+export function DashboardHeader(){
+  return (
+    <header className="bg-violet1 text-white p-5 flex justify-between items-center">
+      <h1 className="font-lily text-3xl">Aroma Eventz</h1>
+      <div className="inline-flex text-xs">
+        <p>
+          Hi, Swarnali Sinha
+          <br />
+          <Link href="/dashboard/profile" className="text-gray-100 font-light">
+            Edit Profile
+          </Link>
+        </p>
+        <Image
+          src="/profile.jpg"
+          alt="Profile"
+          width={30}
+          height={10}
+          className="rounded-full ml-4"
+        />
+      </div>
     </header>
   );
 }

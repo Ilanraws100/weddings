@@ -2,3 +2,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.tilted-background {
+    background: linear-gradient(
+        185deg,
+        #BC1A6E 60%, /* Replace 'color1' with your first color */
+        #C5215C 50%  /* Replace 'color2' with your second color */
+    );
+}
