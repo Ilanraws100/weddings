@@ -1,10 +1,16 @@
 "use client";
 import { DashboardHeader } from "@/components/header";
-import { cateringMenu, foodMenu } from "@/consts";
+import { cateringMenu } from "@/consts";
+import { foodMenu } from "@/data/foodMenu";
 import Image from "next/image";
+import { Router, useRouter } from "next/navigation";
 
 export default function ChoosePlate({ params }) {
-  const data = foodMenu[params.type];
+  const router = useRouter();
+
+  const data = foodMenu[params.section];
+  if (!data) return <div>Page not found</div>;
+
   return (
     <>
       <DashboardHeader />
@@ -12,19 +18,28 @@ export default function ChoosePlate({ params }) {
         <h1 className="text-3xl font-bold">{data.title}</h1>
         <h2 className="text-gray-500 text-center">{data.subtitle}</h2>
         <div className="grid grid-cols-3 gap-5 my-5">
-          {data.packages.map((packageData) => PackageCard(packageData))}
+          {data.packages?.map((packageData, index) =>
+            PackageCard(packageData, params.section, router, index)
+          )}
         </div>
       </main>
     </>
   );
 }
-function PackageCard(packageData) {
+function PackageCard(packageData, section, router, index) {
   const handleClick = () => {
-    console.log(packageData);
-  }
+    router.push(`/dashboard/choosePlate/overview`);
+    //   const sections=Object.keys(foodMenu)
+    //   const index=sections.indexOf(section)
+    //   if(index<sections.length-1)
+    //   router.push(`/dashboard/choosePlate/${sections[index+1]}`)
+    // else
+    //   router.push(`/dashboard/choosePlate/${sections[0]}`)
+    console.log(packageData, index);
+  };
   return (
     <div
-      key={packageData.title}
+      key={index}
       onClick={handleClick}
       className="flex flex-col rounded-md border  shadow-2xl p-4 cursor-pointer hover:scale-105 transition-all"
     >
@@ -34,13 +49,14 @@ function PackageCard(packageData) {
         width={600}
         height={500}
         className="rounded-md"
+        priority
       />
       <span className="w-24 text-sm text-center bg-primary text-white font-bold mt-4 mb-2 rounded-lg">
         {packageData.label}
       </span>
       <h1 className="text-xl font-bold mb-2">{packageData.title}</h1>
       <ul className="space-y-0.5 list-disc list-inside">
-        {packageData.items.map((item) => (
+        {packageData.items?.map((item) => (
           <li key={item} className="text-gray-500">
             {item}
           </li>
