@@ -1,5 +1,5 @@
+import { DashboardFooter } from "@/components/footer";
 import { DashboardHeader } from "@/components/header";
-import Link from "next/link";
 
 export default function ChooseVenue() {
     return (
@@ -17,20 +17,7 @@ export default function ChooseVenue() {
             <div className="bg-gray-100 w-60 h-60 rounded-md"></div>
           </div>
         </main>
-        <footer className="bg-[rgba(234,126,126,0.3)] flex flex-col p-5">
-          <div className="flex justify-between">
-            <button className="px-6 py-1 m-5 border border-gray-800 rounded-md">Back</button>
-            <button className="px-6 py-1 m-5 rounded-md bg-primary text-white font-bold">
-              Continue
-            </button>
-          </div>
-          <p className="text-xs mx-4 self-end">
-            You are logged in|
-            <Link href="/Profile" className="text-linkColor font-bold">
-              Go to Profile
-            </Link>
-          </p>
-        </footer>
+       <DashboardFooter />
       </>
     );
 }

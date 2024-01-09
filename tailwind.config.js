@@ -19,6 +19,9 @@ export const theme = {
     fontFamily: {
       lily: ["'Lily Script One'", "cursive"],
     },
+    backgroundImage: {
+     // "gray-to-white-gradient": "linear-gradient(to top, #f3f3f3, white)",
+    },
   },
 };
 export const plugins = [];

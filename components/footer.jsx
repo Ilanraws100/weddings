@@ -1,4 +1,4 @@
-import CustomButton, { ShareButton } from "@/components/customButton";
+import CustomButton, { BackButton, ContinueButton, ShareButton } from "@/components/customButton";
 import IconButton from "@mui/material/IconButton";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -74,6 +74,23 @@ export default function FooterSection() {
           <p>©Copyright 2024 | Aroma’s Eventz </p>
         </div>
       </div>
+    </footer>
+  );
+}
+
+export function DashboardFooter(){
+  return (
+    <footer className="bg-[rgba(234,126,126,0.3)] flex flex-col p-5">
+      <div className="flex justify-between">
+       <BackButton />
+       <ContinueButton />
+      </div>
+      <p className="text-xs mx-4 self-end">
+        You are logged in|
+        <Link href="/Profile" className="text-linkColor font-bold">
+          Go to Profile
+        </Link>
+      </p>
     </footer>
   );
 }

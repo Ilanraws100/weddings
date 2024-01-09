@@ -3,14 +3,15 @@ import { Button } from "@mui/material";
 import Link from "next/link";
 import ReplyIcon from "@mui/icons-material/Reply";
 import IconButton from "@mui/material/IconButton";
+import { useRouter } from "next/navigation";
 
 export function AromaEventzButton(props) {
   return (
     <Link href={props.href || "/login"}>
       <button
         className={`font-bold max-w-xs rounded-full text-lg py-2 px-4 hover:bg-black ${
-          props.style ? props.style : "bg-primary text-white"}`
-        }
+          props.style ? props.style : "bg-primary text-white"
+        }`}
       >
         {props.label || "Go To Aroma Events"}
         <span className="ml-2 inline-block align-middle">
@@ -78,23 +79,23 @@ export function ContactAromaButton() {
   );
 }
 
-export function ShareButton(){
-   const handleShare = async () => {
-     if (navigator.share) {
-       try {
-         await navigator.share({
-           title: "Aroma Events",
-           text: "Complete Bengali Event Management Services- Decoration, Venue and Catering Services for your wedding, reception, or any other event in Kolkata.",
-           url: "https://aromaeventz.com",
-         });
-       } catch (error) {
-         console.error("Error sharing content:", error);
-       }
-     } else {
-       // Fallback for browsers that do not support the Web Share API
-       console.log("Web Share not supported. Implement fallback here.");
-     }
-   };
+export function ShareButton() {
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: "Aroma Events",
+          text: "Complete Bengali Event Management Services- Decoration, Venue and Catering Services for your wedding, reception, or any other event in Kolkata.",
+          url: "https://aromaeventz.com",
+        });
+      } catch (error) {
+        console.error("Error sharing content:", error);
+      }
+    } else {
+      // Fallback for browsers that do not support the Web Share API
+      console.log("Web Share not supported. Implement fallback here.");
+    }
+  };
   return (
     <IconButton aria-label="email" size="large" onClick={handleShare}>
       <ReplyIcon fontSize="inherit" className="scale-x-[-1]" />
@@ -115,5 +116,27 @@ export default function CustomButton(props) {
         {props.label}
       </button>
     </Link>
+  );
+}
+
+export function BackButton() {
+  return (
+    <button
+      className="px-6 py-1 m-5 border border-gray-800 rounded-md"
+      onClick={() => history.back()}
+    >
+      Back
+    </button>
+  );
+}
+export function ContinueButton() {
+  const history = useRouter();
+  return (
+    <button
+      className="px-6 py-1 m-5 rounded-md bg-primary text-white font-bold"
+      onClick={() => history.push('/dashboard/venue1')}
+    >
+      Continue
+    </button>
   );
 }
